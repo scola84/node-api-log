@@ -41,10 +41,10 @@ export default class AbstractLog {
     return this;
   }
 
-  _log(type, text, connection) {
+  _log(type, text, socket) {
     this._targets.forEach((target) => {
       target.log({
-        address: this._address(connection),
+        address: this._address(socket),
         date: new Date(),
         id: this._id,
         name: this._name,
@@ -54,7 +54,7 @@ export default class AbstractLog {
     });
   }
 
-  _address(connection) {
-    return connection && connection.address().address || '';
+  _address(socket) {
+    return socket && socket.address().address || '';
   }
 }

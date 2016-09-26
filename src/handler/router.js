@@ -29,13 +29,11 @@ export default class RouterLog extends AbstractLog {
   }
 
   _error(error) {
-    this._log('error', error.message, error.request.connection());
+    this._log('error', error.message, error.request);
   }
 
   _request(request, response, next) {
-    this._log('request', request.method() + ' ' + request.url(),
-      request.connection());
-
+    this._log('request', request.method() + ' ' + request.url(), request);
     next();
   }
 }

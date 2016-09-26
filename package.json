@@ -1,0 +1,16 @@
+{
+  "name": "@scola/api-log",
+  "version": "0.0.0",
+  "description": "API Log",
+  "repository": "github:scola84/node-api-log",
+  "author": "M.C. van den Boogaart <scola@kvdb.name>",
+  "license": "MIT",
+  "main": "./dist/api-log.js",
+  "jsnext:main": "index.js",
+  "devDependencies": {
+    "rollup": "^0.35.9"
+  },
+  "scripts": {
+    "build": "rollup -i index.js -o ./dist/api-log.js -f cjs"
+  }
+}

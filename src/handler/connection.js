@@ -90,7 +90,6 @@ export default class ConnectionLog extends AbstractLog {
   }
 
   _response(event) {
-    this._log('response', event.response.status(),
-      event.connection);
+    this._log('response', event.response.status(), event.connection);
   }
 }

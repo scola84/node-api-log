@@ -8,9 +8,15 @@
   "main": "./dist/api-log.js",
   "jsnext:main": "index.js",
   "devDependencies": {
-    "rollup": "^0.35.9"
+    "rollup": "^0.36.1",
+    "rollup-plugin-buble": "^0.14.0"
   },
   "scripts": {
-    "build": "rollup -i index.js -o ./dist/api-log.js -f cjs"
+    "build": "npm run cleanup && npm run rollup",
+    "build:min": "npm run build && npm run min",
+    "cleanup": "rm -rf dist",
+    "min": "uglifyjs dist/api-log.js -m -o dist/api-log.min.js",
+    "prepublish": "npm run build:min",
+    "rollup": "rollup -c"
   }
 }

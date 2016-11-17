@@ -8,9 +8,9 @@
   "main": "./dist/api-log.js",
   "jsnext:main": "index.js",
   "devDependencies": {
-    "rollup": "^0.36.1",
+    "rollup": "^0.36.3",
     "rollup-plugin-buble": "^0.14.0",
-    "uglify-js": "^2.7.3"
+    "uglify-js": "^2.7.4"
   },
   "scripts": {
     "build": "npm run cleanup && npm run rollup",

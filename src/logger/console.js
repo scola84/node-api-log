@@ -1,12 +1,13 @@
-export default class ConsoleLogger {
-  log(event) {
-    console[event.type === 'error' ? 'error' : 'log']([
-      event.date.toISOString(),
-      event.id,
-      event.name,
-      event.type,
-      event.address || '',
-      event.text || ''
+import AbstractLogger from './abstract';
+
+export default class ConsoleLogger extends AbstractLogger {
+  log(type, data = {}) {
+    console.log([
+      new Date().toISOString(),
+      this._id || '',
+      type,
+      this._address(data.connection),
+      data.text || ''
     ].join(' - '));
   }
 }
